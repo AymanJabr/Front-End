@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "Cairo";
+  src: url("./assets/Cairo-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("./assets/Cairo-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("./assets/Cairo-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("./assets/Cairo-Regular.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("./assets/Cairo-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("./assets/Cairo-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+
+
+.usefulStuff{
+    --primaryColor: #4C3FF5;
+    
+
+}
