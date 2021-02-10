@@ -40,10 +40,321 @@
   font-style: normal;
 }
 
+:root {
+  --primaryColor: #4c3ff5;
+  --lighterPrimaryColor: #5d54e6;
+  --footerBackgroundColor: #4f4d4d;
+  font-family: Cairo, "Courier New", Courier, monospace;
+}
 
 
-.usefulStuff{
-    --primaryColor: #4C3FF5;
-    
+nav {
+  background: var(--primaryColor);
+  color: white;
+  -webkit-box-shadow: 0px 11px 21px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 11px 21px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 11px 21px -6px rgba(0, 0, 0, 0.75);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 3;
+}
 
+footer {
+  background: var(--footerBackgroundColor);
+}
+
+main {
+  color: black;
+  height: 500vh;
+}
+
+section {
+  max-width: 1200px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.section-divider {
+  background-color: var(--primaryColor);
+  height: 5px;
+  border-radius: 10px;
+}
+
+.usefulStuff {
+}
+
+.company-brand-name-nav {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.company-brand-name-footer {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-categories-item {
+  display: inline;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  font-size: 1.3rem;
+}
+
+.device-specification-color {
+  border-radius: 15px;
+  height: 5vw;
+}
+
+.device-specification-colors-title {
+  height: 5vw;
+}
+
+.device-specification-colors-container {
+  display: grid;
+  grid-template-areas: "colorBlue colorWhite colorRed colorGreen" "second second second colorBlack";
+  grid-template-columns: repeat(4,1fr);
+  column-gap: 10px;
+}
+
+.device-specification-space {
+  font-weight: bolder;
+  font-size: 1.05rem;
+  border: 1px solid rgba(47, 47, 47, 0.5);
+  border-radius: 20px;
+}
+
+.prices-comparison-jarir-logo {
+  width: 10vw;
+  object-fit: contain;
+}
+
+.prices-comparison-extra-logo {
+  width: 8vw;
+  object-fit: contain;
+}
+
+.prices-comparison-eddy-logo {
+  width: 10vw;
+  object-fit: contain;
+}
+
+.prices-comparison-virgin-logo {
+  width: 8vw;
+  object-fit: contain;
+}
+
+.prices-comparison-noon-logo {
+  width: 10vw;
+  object-fit: contain;
+}
+
+.prices-comparison-amazon-logo {
+  width: 10vw;
+  object-fit: contain;
+}
+
+.graph-maxima-img {
+  width: 5vw;
+  object-fit: contain;
+}
+
+.green-best-price {
+  color: green;
+  display: none;
+}
+
+.actual-best-price {
+  display: block;
+}
+
+.color-device-green {
+  grid-area: colorGreen;
+  background-color: rgba(173, 255, 47, 0.5);
+}
+
+.color-device-white {
+  grid-area: colorWhite;
+  background-color: rgba(240, 230, 230, 0.5);
+}
+
+.color-device-red {
+  grid-area: colorRed;
+  background-color: rgba(238, 45, 45, 0.5);
+}
+
+.color-device-black {
+  grid-area: colorBlack;
+  background-color: rgba(47, 47, 47, 0.5);
+}
+
+.color-device-blue {
+  grid-area: colorBlue;
+  background-color: rgba(75, 75, 253, 0.5);
+}
+
+.empty-item {
+  padding-right: 10rem;
+}
+
+.footer-contactUs-container {
+  color: white;
+  text-align: right;
+}
+
+.footer-aboutUs-container {
+  color: white;
+  text-align: right;
+}
+
+.social-media-button {
+  font-size: 1.35rem;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 10px;
+  padding-left: 10px;
+  color: var(--lighterPrimaryColor);
+  border-top: 1px solid rgba(76, 63, 245, 0.5);
+}
+
+.first-button {
+  border-top: none;
+}
+
+#Social-media-aside {
+  color: black;
+  position: fixed;
+  left: 0;
+  top: 40vh;
+  z-index: 2;
+  background-color: rgba(210, 221, 228, 0.585);
+  border-radius: 4px;
+  border: 1px solid rgba(164, 159, 235, 0.347);
+  -webkit-box-shadow: 0px 11px 35px -7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 11px 35px -7px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 11px 35px -7px rgba(0, 0, 0, 0.75);
+}
+
+
+#Categories-section {
+
+}
+
+.hero-title-and-info {
+  color: black;
+  font-weight: bolder;
+}
+
+.hero-category {
+  margin-top: 10vw;
+}
+
+.device-container:hover, .hero-category:hover {
+  border-radius: 10px;
+  border: 1px solid rgba(164, 159, 235, 0.347);
+  -webkit-box-shadow: 0px 11px 35px -7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 11px 35px -7px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 11px 35px -7px rgba(0, 0, 0, 0.75);
+  
+}
+
+.hero-category-title {
+  font-weight: bolder;
+  font-family:  Cairo, "Courier New", Courier, monospace;
+  margin-top: 3vw;
+}
+
+.hero-category-image {
+  height: 12vw;
+  margin: 0 auto;
+}
+
+.category-mac {
+
+}
+
+.category-iphone {
+
+}
+
+.category-ipad {
+
+}
+
+.category-airpod {
+
+}
+
+.category-watches {
+
+}
+
+.device-container-title {
+  font-weight: bold;
+}
+
+
+.section-border {
+  background-color: yellow;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  width: 90%;
+  margin-top: 15vh;
+  background-color: white;
+  border-radius: 20px;
+
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.section-border:before {
+  content: "";
+  background-color: rgb(2, 2, 145);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 20px;
+  top: 0;
+  z-index: -1;
+
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.section-border:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgb(251, 186, 21);
+  position: absolute;
+  border-radius: 20px;
+  top: 0;
+  z-index: -1;
+
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.section-border.vertical-scroll:after{
+  content: "";
+  top: -15px;
+}
+
+.section-border.vertical-scroll:before {
+  content: "";
+  top: -30px;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
 }
