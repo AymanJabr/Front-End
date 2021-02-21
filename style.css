@@ -1,52 +1,14 @@
-@font-face {
-  font-family: "Cairo";
-  src: url("./assets/Cairo-ExtraLight.ttf") format("truetype");
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Cairo";
-  src: url("./assets/Cairo-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Cairo";
-  src: url("./assets/Cairo-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Cairo";
-  src: url("./assets/Cairo-Regular.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Cairo";
-  src: url("./assets/Cairo-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Cairo";
-  src: url("./assets/Cairo-Black.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-}
-
 :root {
   --primaryColor: #4c3ff5;
   --lighterPrimaryColor: #5d54e6;
   --footerBackgroundColor: #4f4d4d;
-  font-family: Cairo, "Courier New", Courier, monospace;
+  font-family: "Cairo", "Courier New", Courier, monospace;
+  overflow-x: hidden;
 }
 
+body {
+  font-family: inherit;
+}
 
 nav {
   background: var(--primaryColor);
@@ -58,17 +20,16 @@ nav {
   top: 0;
   right: 0;
   left: 0;
-  z-index: 3;
+  z-index: 5;
 }
 
 footer {
   background: var(--footerBackgroundColor);
-  margin-top: 300vh;
+  margin-top: 10vh;
 }
 
 main {
   color: black;
-  height: 500vh;
 }
 
 section {
@@ -83,7 +44,52 @@ section {
   border-radius: 10px;
 }
 
-.usefulStuff {
+.hero-section-title {
+  font-weight: bold;
+  color: white;
+  font-size: 7vw;
+  margin-top: 18vh;
+  z-index: 3;
+}
+
+.hero-section-description {
+  color: white;
+  z-index: 3;
+  font-size: 1.5vw;
+
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.hero-section-arrow {
+  display: block;
+  color: white;
+  z-index: 3;
+
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.hero-section-description:hover + .hero-section-arrow,
+.hero-section-arrow:hover {
+  padding-top: 50px;
+}
+
+.hero-section-arrow-up {
+  color: white;
+  background-color: white;
+  height: 2vh;
+  width: 3px;
+  z-index: 3;
+  border-radius: 20px;
+}
+
+.hero-section-title-span {
+  color: yellow;
 }
 
 .company-brand-name-nav {
@@ -113,11 +119,34 @@ section {
   height: 5vw;
 }
 
+#nav-hidden-menu {
+  position: absolute;
+  background-color: var(--primaryColor);
+  color: white;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.nav-hidden-menu-button {
+  border: none;
+  color: white;
+  background-color: var(--primaryColor);
+}
+
+.nav-categories-item-hidden {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
 .device-specification-colors-container {
-  display: grid;
+  /* display: grid;
   grid-template-areas: "colorBlue colorWhite colorRed colorGreen" "second second second colorBlack";
   grid-template-columns: repeat(4,1fr);
-  column-gap: 10px;
+  column-gap: 10px; */
 }
 
 .device-specification-space {
@@ -172,27 +201,27 @@ section {
 }
 
 .color-device-green {
-  grid-area: colorGreen;
+  /* grid-area: colorGreen; */
   background-color: rgba(173, 255, 47, 0.5);
 }
 
 .color-device-white {
-  grid-area: colorWhite;
+  /* grid-area: colorWhite; */
   background-color: rgba(240, 230, 230, 0.5);
 }
 
 .color-device-red {
-  grid-area: colorRed;
+  /* grid-area: colorRed; */
   background-color: rgba(238, 45, 45, 0.5);
 }
 
 .color-device-black {
-  grid-area: colorBlack;
+  /* grid-area: colorBlack; */
   background-color: rgba(47, 47, 47, 0.5);
 }
 
 .color-device-blue {
-  grid-area: colorBlue;
+  /* grid-area: colorBlue; */
   background-color: rgba(75, 75, 253, 0.5);
 }
 
@@ -206,13 +235,12 @@ section {
 }
 
 .maximum-graph {
-  border-radius: 25px;  
+  border-radius: 25px;
 }
 
 .minimum-graph {
-  border-radius: 25px;  
+  border-radius: 25px;
   margin-top: 0;
-
 }
 
 .footer-contactUs-container {
@@ -244,7 +272,7 @@ section {
   position: fixed;
   left: 0;
   top: 40vh;
-  z-index: 2;
+  z-index: 5;
   background-color: rgba(210, 221, 228, 0.585);
   border-radius: 4px;
   border: 1px solid rgba(164, 159, 235, 0.347);
@@ -253,9 +281,37 @@ section {
   box-shadow: 0px 11px 35px -7px rgba(0, 0, 0, 0.75);
 }
 
+#Hero-image-section {
+  position: relative;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  width: 100vw;
+  height: 80vh;
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/Apple-Products.jpg"); */
+  background-image: url("./assets/Header-image.png");
+  background-size: 100% 100%;
+  background-position-y: center;
+  background-repeat: no-repeat;
+}
 
-#Categories-section {
+#Hero-image-section::before {
+  content: "";
+  background-color: black;
+  position: absolute;
+  opacity: 0.3;
+  width: 130vw;
+  margin-left: -30vw;
+  height: 100%;
+  z-index: 2;
+}
 
+.red-color {
+  color: red;
+}
+
+.insurance-blue-text {
+  color: blue;
+  font-weight: 100;
 }
 
 .hero-title-and-info {
@@ -264,47 +320,184 @@ section {
 }
 
 .hero-category {
+  position: relative;
   margin-top: 10vw;
+  z-index: 2;
 }
 
-.device-container:hover, .hero-category:hover {
+.device-container:hover,
+.hero-category:hover {
   border-radius: 10px;
   border: 1px solid rgba(164, 159, 235, 0.347);
   -webkit-box-shadow: 0px 11px 35px -7px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 11px 35px -7px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 11px 35px -7px rgba(0, 0, 0, 0.75);
-  
 }
 
 .hero-category-title {
   font-weight: bolder;
-  font-family:  Cairo, "Courier New", Courier, monospace;
+  font-family: "Cairo", "Courier New", Courier, monospace;
   margin-top: 3vw;
 }
 
 .hero-category-image {
+  padding-top: 10px;
+  position: relative;
+  z-index: 2;
   height: 12vw;
+  margin-left: auto;
+
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.hero-category-actual-image {
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.hero-category-image:before {
+  border-radius: 20px;
+  position: absolute;
+  content: "";
+  text-align: center;
+  float: center;
+  width: 15vw;
+  left: 24%;
+  height: 100%;
+  margin: 0 0;
+  /* margin: 0 auto; */
+  background-color: brown;
+  z-index: -1;
+}
+
+.hero-category:hover > .category-mac::before {
+  transform: rotate(-40deg) scale(0.8) translateX(2vw) translateY(2vh);
+}
+.hero-category:hover > div > .category-mac-image {
+  transform: scale(1.2);
+}
+
+.hero-category:hover > .category-iphone::before {
+  transform: rotate(-40deg) scale(0.9);
+}
+.hero-category:hover > div > .category-iphone-image {
+  transform: scale(1.2) translateX(-1vw);
+}
+
+.hero-category:hover > .category-ipad::before {
+  transform: rotate(-40deg) scale(0.8) translateX(2vw) translateY(2vh);
+}
+.hero-category:hover > div > .category-ipad-image {
+  transform: scale(1.2) translateX(-1vw) translateY(-1vw);
+}
+
+.hero-category:hover > .category-airpod::before {
+  transform: rotate(-30deg);
+}
+.hero-category:hover > div > .category-airpod-image {
+  transform: scale(1.2);
+}
+
+.hero-category:hover > .category-watches::before {
+  transform: rotate(40deg);
+}
+.hero-category:hover > div > .category-watches-image {
+  transform: scale(1.2);
+}
+
+.category-mac-image {
+  margin: 10% auto;
+  height: 6vw;
+
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.category-mac::before {
+  background-color: #febcba;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.category-iphone-image {
+  margin: 5% auto;
+  height: 10vw;
+
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.category-iphone::before {
+  background-color: #fbd100;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.category-ipad-image {
+  margin: 3% auto;
+  height: 10vw;
+
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.category-ipad::before {
+  background-color: #112248;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.category-airpod-image {
   margin: 0 auto;
+  height: 12vw;
+
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
-.category-mac {
-
+.category-airpod::before {
+  background-color: #4c3ff5;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
-.category-iphone {
+.category-watches-image {
+  margin: 1% auto;
+  height: 11vw;
 
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
-.category-ipad {
-
-}
-
-.category-airpod {
-
-}
-
-.category-watches {
-
+.category-watches::before {
+  background-color: #00fb8e;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .device-container-title {
@@ -314,7 +507,6 @@ section {
 .related-articles-article {
   font-weight: normal;
 }
-
 
 .section-border {
   background-color: yellow;
@@ -330,6 +522,10 @@ section {
   -moz-transition: all 0.5s linear;
   -o-transition: all 0.5s linear;
   transition: all 0.5s linear;
+
+  -webkit-box-shadow: 0px 11px 20px -7px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 11px 20px -7px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 11px 20px -7px rgba(0, 0, 0, 0.2);
 }
 
 .section-border:before {
@@ -364,7 +560,7 @@ section {
   transition: all 0.5s linear;
 }
 
-.section-border.vertical-scroll:after{
+.section-border.vertical-scroll:after {
   content: "";
   top: -15px;
 }
@@ -381,4 +577,68 @@ section {
 
 .form-rounded-shape {
   border-radius: 20px;
+}
+
+.ninja {
+  display: none;
+}
+
+@media only screen and (max-width: 992px) {
+  .hero-section-description {
+    font-size: 3vw;
+  }
+  .related-articles-article {
+    font-size: 1.3rem;
+  }
+  .hero-category-image:before {
+    left: 20%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hero-section-description {
+    font-size: 4vw;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .hero-section-description {
+    font-size: 5vw;
+  }
+
+  .hero-category-title {
+    font-size: 1.3rem;
+  }
+
+  .footer-contactUs-container {
+    font-size: 0.8rem;
+  }
+
+  .footer-aboutUs-container {
+    font-size: 0.8rem;
+  }
+
+  .footer-aboutUs-title {
+    font-size: 1.2rem;
+  }
+
+  .footer-contactUs-title {
+    font-size: 1.2rem;
+  }
+
+  .company-brand-name-footer {
+    font-size: 1.5rem;
+  }
+
+  .related-articles-article {
+    font-size: 0.8rem;
+  }
+
+  #Hero-image-section {
+    background-size: cover;
+  }
+
+  .hero-category-image:before {
+    left: 12%;
+  }
 }

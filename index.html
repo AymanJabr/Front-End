@@ -16,18 +16,29 @@
     ></script>
     <script src="./node_modules/chart.js/dist/Chart.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Cairo' rel='stylesheet'>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <header>
-      <nav class="d-flex d-lg-flex flex-row-reverse justify-content-around">
+      <nav class="d-flex d-lg-flex flex-row-reverse justify-content-between justify-content-md-around px-2">
         <div class="company-brand-name-nav my-auto">مضمون</div>
-        <div class="nav-categories my-auto py-3">
-          <p class="nav-categories-item empty-item"></p>
+        <div class="d-none d-md-block nav-categories my-auto py-3">
+          <p class="nav-categories-item d-none d-lg-inline empty-item"></p>
           <p class="nav-categories-item">ماك</p>
           <p class="nav-categories-item">ايفون</p>
           <p class="nav-categories-item">ايربود</p>
           <p class="nav-categories-item">ايباد</p>
+        </div>
+
+        <div class="d-block d-md-none row nav-categories-hidden-container my-auto">
+          <button onclick="toggleNavMenu()" class="nav-hidden-menu-button" id="nav-categories-toggle"><i class="nav-hidden-menu-button fas fa-bars fa-2x"></i></button>
+          <div class="ninja" id="nav-hidden-menu">
+            <p class="nav-categories-item-hidden">ماك</p>
+            <p class="nav-categories-item-hidden">ايفون</p>
+            <p class="nav-categories-item-hidden">ايربود</p>
+            <p class="nav-categories-item-hidden">ايباد</p>
+          </div>
         </div>
       </nav>
     </header>
@@ -43,59 +54,81 @@
       <div class="social-media-button"><i class="fas fa-link"></i></div>
     </aside>
 
-    <main class="mt-5 pt-5">
-      <section class="row" id="Hero-image-section"></section>
+    <main class="mt-5 pt-3">
+      <section class="row ml-5 mb-3 text-center" id="Hero-image-section">
+        <h1 class="hero-section-title col-12">
+          مظمون يمكنك
+          <span class="hero-section-title-span">البحث و مقارنة</span> الاسعار
+        </h1>
+        <p class="hero-section-description mx-auto">أبحث عن أسعار الجهاز</p>
+        <i class="fas fa-chevron-down fa-3x hero-section-arrow col-12"></i>
+      </section>
 
       <section class="row" id="Categories-section">
         <div class="col-4 d-block mx-auto section-divider"></div>
         <div class="col-12 mt-5 hero-title-and-info">
           <h4 class="text-center">اختر جهاز لمقارنة الاسعار</h4>
         </div>
-        <div class="col-12 hero-categories-container row">
-          <div class="col-4 hero-category category-mac">
-            <img
-              class="d-block img-fluid mx-auto hero-category-image"
-              src="./assets/airpods.png"
+        <div class="col-12 hero-categories-container flex-row-reverse row justify-content-center">
+          <div class="col-4 hero-category ">
+            <div class="d-block category-mac hero-category-image text-center">
+              <img
+              class=" img-fluid mx-auto hero-category-actual-image  category-mac-image"
+              src="./assets/Mac-pc.png"
               alt="airpod-image"
             />
-            <h1 class="hero-category-title text-center">ايباد</h1>
+            </div>
+            
+            <h1 class="hero-category-title text-center">ماك</h1>
           </div>
-          <div class="col-4 hero-category category-iphone">
-            <img
-              class="d-block mx-auto img-fluid hero-category-image"
-              src="./assets/airpods.png"
+          <div class="col-4 hero-category ">
+            <div class="d-block category-iphone hero-category-image text-center">
+              <img
+              class=" img-fluid mx-auto hero-category-actual-image  category-iphone-image"
+              src="./assets/I-phone.png"
               alt="airpod-image"
             />
-            <h1 class="hero-category-title text-center">ايباد</h1>
+            </div>
+            
+            <h1 class="hero-category-title text-center">أيفون</h1>
           </div>
-          <div class="col-4 hero-category category-ipad">
-            <img
-              class="img-fluid mx-auto d-block hero-category-image"
-              src="./assets/airpods.png"
+          <div class="col-4 hero-category ">
+            <div class="d-block category-ipad hero-category-image text-center">
+              <img
+              class=" img-fluid mx-auto hero-category-actual-image  category-ipad-image"
+              src="./assets/I-pad.png"
               alt="airpod-image"
             />
-            <h1 class="hero-category-title text-center">ايباد</h1>
+            </div>
+            
+            <h1 class="hero-category-title text-center">أيباد</h1>
           </div>
-          <div class="col-6 hero-category category-airpod">
-            <img
-              class="img-fluid mx-auto d-block hero-category-image"
+          <div class="col-4 hero-category ">
+            <div class="d-block category-airpod hero-category-image text-center">
+              <img
+              class=" img-fluid mx-auto hero-category-actual-image  category-airpod-image"
               src="./assets/airpods.png"
               alt="airpod-image"
             />
-            <h1 class="hero-category-title text-center">ايباد</h1>
+            </div>
+            
+            <h1 class="hero-category-title text-center">ايربود</h1>
           </div>
-          <div class="col-6 hero-category category-watches">
-            <img
-              class="img-fluid mx-auto d-block hero-category-image"
-              src="./assets/airpods.png"
+          <div class="col-4 hero-category ">
+            <div class="d-block category-watches hero-category-image text-center">
+              <img
+              class=" img-fluid mx-auto hero-category-actual-image  category-watches-image"
+              src="./assets/watches.png"
               alt="airpod-image"
             />
-            <h1 class="hero-category-title text-center">ايباد</h1>
+            </div>
+            
+            <h1 class="hero-category-title text-center">ساعة ابل</h1>
           </div>
         </div>
       </section>
 
-      <section class="section-border row" id="Devices-section">
+      <section class="section-border vertical-scroll row" id="Devices-section">
         <div class="col-4 mt-4 d-block mx-auto section-divider"></div>
         <div class="col-12 devices-title-and-info">
           <h4 class="title-center mt-5 text-center">
@@ -104,7 +137,7 @@
         </div>
 
         <div class="col-12 devices-section-container mt-5 row">
-          <div class="col-2 device-container mt-3">
+          <div class="col-4 col-md-2 device-container mt-3">
             <img
               class="img-fluid d-block mx-auto"
               src="./assets/airpods.png"
@@ -112,7 +145,7 @@
             />
             <p class="device-container-title text-center">ايفون اكس اس</p>
           </div>
-          <div class="col-2 device-container mt-3">
+          <div class="col-4 col-md-2 device-container mt-3">
             <img
               class="img-fluid d-block mx-auto"
               src="./assets/airpods.png"
@@ -120,7 +153,7 @@
             />
             <p class="device-container-title text-center">ايفون اكس اس</p>
           </div>
-          <div class="col-2 device-container mt-3">
+          <div class="col-4 col-md-2 device-container mt-3">
             <img
               class="img-fluid d-block mx-auto"
               src="./assets/airpods.png"
@@ -128,7 +161,7 @@
             />
             <p class="device-container-title text-center">ايفون اكس اس</p>
           </div>
-          <div class="col-2 device-container mt-3">
+          <div class="col-4 col-md-2 device-container mt-3">
             <img
               class="img-fluid d-block mx-auto"
               src="./assets/airpods.png"
@@ -136,7 +169,7 @@
             />
             <p class="device-container-title text-center">ايفون اكس اس</p>
           </div>
-          <div class="col-2 device-container mt-3">
+          <div class="col-4 col-md-2 device-container mt-3">
             <img
               class="img-fluid d-block mx-auto"
               src="./assets/airpods.png"
@@ -144,7 +177,7 @@
             />
             <p class="device-container-title text-center">ايفون اكس اس</p>
           </div>
-          <div class="col-2 device-container mt-3">
+          <div class="col-4 col-md-2 device-container mt-3">
             <img
               class="img-fluid d-block mx-auto"
               src="./assets/airpods.png"
@@ -152,7 +185,7 @@
             />
             <p class="device-container-title text-center">ايفون اكس اس</p>
           </div>
-          <div class="col-2 device-container mt-3">
+          <div class="col-4 col-md-2 device-container mt-3">
             <img
               class="img-fluid d-block mx-auto"
               src="./assets/airpods.png"
@@ -160,7 +193,7 @@
             />
             <p class="device-container-title text-center">ايفون اكس اس</p>
           </div>
-          <div class="col-2 device-container mt-3">
+          <div class="col-4 col-md-2 device-container mt-3">
             <img
               class="img-fluid d-block mx-auto"
               src="./assets/airpods.png"
@@ -168,7 +201,7 @@
             />
             <p class="device-container-title text-center">ايفون اكس اس</p>
           </div>
-          <div class="col-2 device-container mt-3">
+          <div class="col-4 col-md-2 device-container mt-3">
             <img
               class="img-fluid d-block mx-auto"
               src="./assets/airpods.png"
@@ -176,7 +209,7 @@
             />
             <p class="device-container-title text-center">ايفون اكس اس</p>
           </div>
-          <div class="col-2 device-container mt-3">
+          <div class="col-4 col-md-2 device-container mt-3">
             <img
               class="img-fluid d-block mx-auto"
               src="./assets/airpods.png"
@@ -184,7 +217,7 @@
             />
             <p class="device-container-title text-center">ايفون اكس اس</p>
           </div>
-          <div class="col-2 device-container mt-3">
+          <div class="col-4 col-md-2 device-container mt-3">
             <img
               class="img-fluid d-block mx-auto"
               src="./assets/airpods.png"
@@ -192,7 +225,7 @@
             />
             <p class="device-container-title text-center">ايفون اكس اس</p>
           </div>
-          <div class="col-2 device-container mt-3">
+          <div class="col-4 col-md-2 device-container mt-3">
             <img
               class="img-fluid d-block mx-auto"
               src="./assets/airpods.png"
@@ -200,7 +233,7 @@
             />
             <p class="device-container-title text-center">ايفون اكس اس</p>
           </div>
-          <div class="col-2 device-container mt-3">
+          <div class="col-4 col-md-2 device-container mt-3">
             <img
               class="img-fluid d-block mx-auto"
               src="./assets/airpods.png"
@@ -208,7 +241,7 @@
             />
             <p class="device-container-title text-center">ايفون اكس اس</p>
           </div>
-          <div class="col-2 device-container mt-3">
+          <div class="col-4 col-md-2 device-container mt-3">
             <img
               class="img-fluid d-block mx-auto"
               src="./assets/airpods.png"
@@ -216,7 +249,7 @@
             />
             <p class="device-container-title text-center">ايفون اكس اس</p>
           </div>
-          <div class="col-2 device-container mt-3">
+          <div class="col-4 col-md-2 device-container mt-3">
             <img
               class="img-fluid d-block mx-auto"
               src="./assets/airpods.png"
@@ -224,7 +257,7 @@
             />
             <p class="device-container-title text-center">ايفون اكس اس</p>
           </div>
-          <div class="col-2 device-container mt-3">
+          <div class="col-4 col-md-2 device-container mt-3">
             <img
               class="img-fluid d-block mx-auto"
               src="./assets/airpods.png"
@@ -232,7 +265,7 @@
             />
             <p class="device-container-title text-center">ايفون اكس اس</p>
           </div>
-          <div class="col-2 device-container mt-3">
+          <div class="col-4 col-md-2 device-container mt-3">
             <img
               class="img-fluid d-block mx-auto"
               src="./assets/airpods.png"
@@ -240,7 +273,7 @@
             />
             <p class="device-container-title text-center">ايفون اكس اس</p>
           </div>
-          <div class="col-2 device-container mt-3">
+          <div class="col-4 col-md-2 device-container mt-3">
             <img
               class="img-fluid d-block mx-auto"
               src="./assets/airpods.png"
@@ -251,7 +284,10 @@
         </div>
       </section>
 
-      <section class="section-border row" id="Device-specifications-section">
+      <section
+        class="section-border vertical-scroll row"
+        id="Device-specifications-section"
+      >
         <div class="col-4 mt-4 d-block mx-auto section-divider"></div>
         <div class="col-12 devices-title-and-info">
           <h4 class="title-center mt-5 text-center">
@@ -262,35 +298,44 @@
           <img
             src="./assets/airpods.png"
             alt="device specification image"
-            class="col-5 device-specification-image img-fluid d-block"
+            class="col-12 col-md-5 device-specification-image img-fluid d-block"
           />
-          <div class="device-specification-details col-7">
+          <div class="device-specification-details col-12 col-md-7">
             <h5 class="text-right device-specification-colors-title col-12">
               لون الجهاز
             </h5>
-            <div class="device-specification-colors-container col-12">
+            <div class="device-specification-colors-container col-12 row">
               <div
-                class="device-specification-color my-2 color-device-green px-4 pt-4 text-center"
+                class="device-specification-color my-2 color-device-green px-4 pt-4 text-center col-3"
               >
                 اخضر
               </div>
               <div
-                class="device-specification-color my-2 color-device-red px-4 pt-4 text-center"
+                class="device-specification-color my-2 color-device-red px-4 pt-4 text-center col-3"
               >
                 احمر
               </div>
               <div
-                class="device-specification-color my-2 color-device-white px-4 pt-4 text-center"
+                class="device-specification-color my-2 color-device-white px-4 pt-4 text-center col-3"
               >
                 ابيض
               </div>
               <div
-                class="device-specification-color my-2 color-device-blue px-4 pt-4 text-center"
+                class="device-specification-color my-2 color-device-blue px-4 pt-4 text-center col-3"
               >
                 ازرق
               </div>
               <div
-                class="device-specification-color my-2 color-device-black px-4 pt-4 text-center"
+                class="empty-color my-2  px-4 pt-4 col-3"
+              > </div>
+              <div
+                class="empty-color my-2  px-4 pt-4 col-3"
+              > </div>
+              <div
+                class="empty-color my-2  px-4 pt-4 col-3"
+              > </div>
+              <div
+                class="device-specification-color my-2 color-device-black px-4 pt-4 text-center col-3"
               >
                 اسود
               </div>
@@ -298,7 +343,7 @@
             <h5 class="text-right device-specification-space-title col-12">
               السعة التخزينية
             </h5>
-            <div class="device-specification-spaces-container row">
+            <div class="device-specification-spaces-container row mb-3 mb-md-0">
               <div
                 class="device-specification-space mx-1 my-2 p-4 text-center ml-auto col-3"
               >
@@ -319,11 +364,15 @@
         </div>
       </section>
 
-      <section class="section-border row" id="Prices-comparison-section">
+      <section
+        class="section-border vertical-scroll row"
+        id="Prices-comparison-section"
+      >
         <div class="col-4 mt-4 d-block mx-auto section-divider"></div>
         <div class="col-12 devices-title-and-info">
           <h4 class="title-center mt-5 text-right">
-            <i class="fas fa-mobile-alt"></i>  أسعار جهاز ايفون 12 لون احمر  (128 جيجا ) اليوم
+            <i class="fas fa-mobile-alt"></i> أسعار جهاز ايفون 12 لون احمر (128
+            جيجا ) اليوم
           </h4>
         </div>
         <div class="prices-comparison-titles col-12 row mx-auto mt-4">
@@ -441,30 +490,31 @@
         </div>
       </section>
 
-      <section class="section-border row" id="Graph-section">
+      <section class="section-border vertical-scroll row" id="Graph-section">
         <div class="col-4 mt-4 d-block mx-auto section-divider"></div>
         <div class="col-12 devices-title-and-info">
           <h4 class="title-center mt-5 text-right">
-            <i class="fas fa-mobile-alt"></i> تاريخ أسعار جهاز ايفون 12 لون احمر  (128 جيجا )
+            <i class="fas fa-mobile-alt"></i> تاريخ أسعار جهاز ايفون 12 لون احمر
+            (128 جيجا )
           </h4>
         </div>
         <div class="col-12 devices-date-picker-container mt-3">
           <form class="col-12">
             <div class="form-group row justify-content-center">
-              <button type="button" class="btn btn-primary col-2">
+              <button type="button" class="btn btn-primary col-6 col-md-2">
                 عرض السنة
               </button>
-              <select class="form-control col-3" id="YearGraphSelector">
+              <select class="form-control col-6 col-md-3" id="YearGraphSelector">
                 <option>2021</option>
                 <option>2020</option>
                 <option>2019</option>
                 <option>2018</option>
                 <option>2017</option>
               </select>
-              <button type="button" class="btn btn-primary col-2 ml-3">
+              <button type="button" class="btn btn-primary col-6 col-md-2 mt-3 mt-md-0 ml-md-3">
                 عرض الشهر
               </button>
-              <select class="form-control col-3" id="MonthGraphSelector">
+              <select class="form-control col-6 col-md-3 mt-3 mt-md-0" id="MonthGraphSelector">
                 <option>1-January</option>
                 <option>2-February</option>
                 <option>3-March</option>
@@ -482,15 +532,14 @@
           </form>
         </div>
         <div class="col-12 row graph-and-maxima-container mt-5">
-          <div
-            class="col-8 graph-container container actual-graph"
+          <div  class="col-12 col-md-8 graph-container container actual-graph"
             style="width: 100%; height: 60vh"
           >
             <canvas id="myChart"></canvas>
           </div>
 
-          <div class="col-4 row maxima-container">
-            <div class="col-12 maximum-graph border text-center my-auto py-4">
+          <div class="col-12 row col-md-4 mt-4 mt-md-0 row maxima-container">
+            <div class="col-5 col-md-12 maximum-graph border text-center my-auto py-4 mr-1 ml-auto">
               <h5>اعلى سعر تاريخي للجهاز</h5>
               <img
                 class="graph-maxima-img img-fluid py-2"
@@ -502,8 +551,7 @@
                 <p class="ml-3">March</p>
               </div>
             </div>
-            <!-- <div class="col-12"></div> -->
-            <div class="col-12 minimum-graph border text-center mb-auto py-4">
+            <div class="col-5 col-md-12 minimum-graph border text-center mb-auto py-4 ml-1 mr-auto">
               <h5>اقل سعر تاريخي للجهاز</h5>
               <img
                 class="graph-maxima-img img-fluid py-2"
@@ -515,22 +563,24 @@
                 <p class="ml-3">March</p>
               </div>
             </div>
-            <!-- <div class="col-12"></div> -->
           </div>
         </div>
         <div class="col-12 row product-email-notification my-5">
           <form class="form-inline mx-auto row">
             <h5 class="col-12 text-center mb-4">تنبيه عند الهبوط في السعر</h5>
             <div class="form-container-sign-up col-12 row">
-              <div class="form-group mb-2  col-8">
+              <div class="form-group mb-2 col-8">
                 <input
-                  type="email"
-                  class="form-control w-100 py-1 form-rounded-shape "
-                  id="emailSubscribtion"
-                  placeholder="Email"
+                  type="text"
+                  class="form-control text-right w-100 py-1 form-rounded-shape"
+                  id="phoneSubscribtion"
+                  placeholder="رقم الجول"
                 />
               </div>
-              <button type="submit" class="col-4 py-1 btn btn-primary mb-2 py-0 form-rounded-shape">
+              <button
+                type="submit"
+                class="col-4 py-1 btn btn-primary mb-2 py-0 form-rounded-shape"
+              >
                 تسجيل
               </button>
             </div>
@@ -540,7 +590,10 @@
         <!-- we have to change this to include it above -->
       </section>
 
-      <section class="section-border row" id="Repair-prices-comparison-section">
+      <section
+        class="section-border vertical-scroll row"
+        id="Repair-prices-comparison-section"
+      >
         <div class="col-4 mt-4 d-block mx-auto section-divider"></div>
         <div class="col-12 devices-title-and-info">
           <h4 class="title-center mt-5 text-right">
@@ -548,163 +601,59 @@
           </h4>
         </div>
 
-        <div class="col-4 row repair-sub-container-first">
-          <div class="col-12 maximum-graph border text-center my-auto py-4">
-              <h5>اعلى سعر تاريخي للجهاز</h5>
-              <img
-                class="graph-maxima-img img-fluid py-2"
-                src="./assets/extra-logo.png"
-                alt="maxima logo"
-              />
-              <div class="maxima-month-price d-flex justify-content-center">
-                <p>2550ر.س.</p>
-                <p class="ml-3">March</p>
-              </div>
+        <div class="col-12 col-md-4 mt-5 mt-md-0 row repair-sub-container-first order-2 order-md-1 mb-3">
+          <div class="col-5 order-2 order-md-1 col-md-12 maximum-graph border text-center my-md-2 py-4 py-md-3 mb-md-3 ml-2 ml-md-0 mr-auto"
+          >
+            <h5>باقات الضمان الاضافية</h5>
+            <h5 class="insurance-blue-text pb-2">AC+</h5>
+            <div class="maxima-month-price d-flex justify-content-center">
+              <p>ريال</p>
+              <h4>2399</h4>
             </div>
-            <div class="col-12 minimum-graph border text-center mb-auto py-4">
-              <h5>اقل سعر تاريخي للجهاز</h5>
-              <img
-                class="graph-maxima-img img-fluid py-2"
-                src="./assets/extra-logo.png"
-                alt="maxima logo"
-              />
-              <div class="maxima-month-price d-flex justify-content-center">
-                <p>2000ر.س.</p>
-                <p class="ml-3">March</p>
-              </div>
-            </div>
+          </div>
+          <div class="col-5 order-1 order-md-2 col-md-12 minimum-graph border text-center my-auto mb-md-auto py-4 mt-3 mr-2 ml-auto"
+          >
+            <h6>
+              باقات الضمان الاضافية باقات الضمان الاضافية باقات الضمان الاضافية
+              باقات الضمان الاضافية باقات الضمان الاضافية باقات الضمان
+              الاضافيةباقات الضمان الإضافية الإضافية باقات الضمان الاضافية
+            </h6>
+          </div>
         </div>
 
-        <div class="col-8 row repair-sub-container-second">
+        <div class="col-12 col-md-8 row repair-sub-container-second order-1 order-md-2">
           <div class="prices-comparison-titles col-12 row mx-auto mt-4">
-            <h5 class="col-3 text-right">شراء</h5>
-            <h5 class="col-5 text-right">السعر</h5>
-            <h5 class="col-4 text-right">اسم البائع</h5>
+            <h5 class="col-3 text-right">السعر التجاري</h5>
+            <h5 class="col-5 text-right">السعر عند الوكيل</h5>
+            <h5 class="col-4 text-right">النوع</h5>
           </div>
           <div class="prices-comparison-jarir col-12 row mt-4 border-bottom">
-            <a class="my-auto col-3 text-right" href="#"> <p>فتح الموقع</p></a>
-
-            <p class="col-5 text-right prices-comparison-price my-auto">
-              <span class="green-best-price actual-best-price"
-                >افضل سعر<i class="ml-1 fas fa-check-circle"></i
-              ></span>
-              2200ر.س.
-            </p>
-
-            <div
-              class="col-4 text-right prices-comparison-jarir-logo-container"
-            >
-              <img
-                src="./assets/jarir-logo.png"
-                alt="jarir logo"
-                class="img-fluid prices-comparison-jarir-logo"
-              />
-            </div>
-          </div>
-          <div
-            class="prices-comparison-extra col-12 row my-2 pb-2 border-bottom"
-          >
-            <a class="my-auto col-3 text-right" href="#"> <p>فتح الموقع</p></a>
-
-            <p class="col-5 text-right prices-comparison-price my-auto">
-              <span class="green-best-price"
-                >افضل سعر<i class="ml-1 fas fa-check-circle"></i
-              ></span>
-              2200ر.س.
-            </p>
-
-            <div
-              class="col-4 text-right prices-comparison-extra-logo-container"
-            >
-              <img
-                src="./assets/extra-logo.png"
-                alt="extra logo"
-                class="img-fluid prices-comparison-extra-logo"
-              />
-            </div>
-          </div>
-          <div
-            class="prices-comparison-eddy col-12 row my-1 pb-2 border-bottom"
-          >
-            <a class="my-auto col-3 text-right" href="#"> <p>فتح الموقع</p></a>
-
-            <p class="col-5 text-right prices-comparison-price my-auto">
-              <span class="green-best-price"
-                >افضل سعر<i class="ml-1 fas fa-check-circle"></i
-              ></span>
-              2200ر.س.
-            </p>
-
-            <div class="col-4 text-right prices-comparison-eddy-logo-container">
-              <img
-                src="./assets/eddy-logo.png"
-                alt="eddy logo"
-                class="img-fluid prices-comparison-eddy-logo"
-              />
-            </div>
+            <p class="my-auto col-3 text-right">2200 ريال</p>
+            <p class="my-auto col-5 text-right">2200 ريال</p>
+            <p class="my-auto col-4 text-right">شاشة</p>
           </div>
           <div class="prices-comparison-virgin col-12 row my-2 border-bottom">
-            <a class="my-auto col-3 text-right" href="#"> <p>فتح الموقع</p></a>
-
-            <p class="col-5 text-right prices-comparison-price my-auto">
-              <span class="green-best-price"
-                >افضل سعر<i class="ml-1 fas fa-check-circle"></i
-              ></span>
-              2200ر.س.
-            </p>
-
-            <div
-              class="col-4 text-right prices-comparison-virgin-logo-container"
-            >
-              <img
-                src="./assets/virgin-logo.png"
-                alt="virgin logo"
-                class="img-fluid prices-comparison-virgin-logo"
-              />
-            </div>
+            <p class="my-auto col-3 text-right red-color">غير متوفر</p>
+            <p class="my-auto col-5 text-right">2300 ريال</p>
+            <p class="my-auto col-4 text-right">جهاز كامل</p>
           </div>
           <div class="prices-comparison-noon col-12 row my-2 border-bottom">
-            <a class="my-auto col-3 text-right" href="#"> <p>فتح الموقع</p></a>
-
-            <p class="col-5 text-right prices-comparison-price my-auto">
-              <span class="green-best-price"
-                >افضل سعر<i class="ml-1 fas fa-check-circle"></i
-              ></span>
-              2200ر.س.
-            </p>
-
-            <div class="col-4 text-right prices-comparison-noon-logo-container">
-              <img
-                src="./assets/noon-logo.png"
-                alt="noon logo"
-                class="img-fluid prices-comparison-noon-logo"
-              />
-            </div>
+            <p class="my-auto col-3 text-right">2700 ريال</p>
+            <p class="my-auto col-5 text-right">2700 ريال</p>
+            <p class="my-auto col-4 text-right">بطارية</p>
           </div>
           <div class="prices-comparison-amazon col-12 row my-2 border-bottom">
-            <a class="my-auto col-3 text-right" href="#"> <p>فتح الموقع</p></a>
-
-            <p class="col-5 text-right prices-comparison-price my-auto">
-              <span class="green-best-price"
-                >افضل سعر<i class="ml-1 fas fa-check-circle"></i
-              ></span>
-              2200ر.س.
-            </p>
-
-            <div
-              class="col-4 text-right prices-comparison-amazon-logo-container"
-            >
-              <img
-                src="./assets/amazon-logo.png"
-                alt="amazon logo"
-                class="img-fluid prices-comparison-amazon-logo"
-              />
-            </div>
+            <p class="my-auto col-3 text-right">2800 ريال</p>
+            <p class="my-auto col-5 text-right">2800 ريال</p>
+            <p class="my-auto col-4 text-right">المايك</p>
           </div>
         </div>
       </section>
 
-      <section class="section-border row" id="Trusted-repair-section">
+      <section
+        class="section-border vertical-scroll row"
+        id="Trusted-repair-section"
+      >
         <div class="col-4 mt-4 d-block mx-auto section-divider"></div>
         <div class="col-12 devices-title-and-info">
           <h4 class="title-center mt-5 text-right">
@@ -712,23 +661,16 @@
           </h4>
         </div>
         <div class="prices-comparison-titles col-12 row mx-auto mt-4">
-          <h5 class="col-2 text-right">شراء</h5>
-          <h5 class="col-2 text-right">السعر</h5>
-          <h5 class="col-2 text-right">اسم البائع</h5>
-          <h5 class="col-2 text-right">السعر</h5>
-          <h5 class="col-2 text-right">اسم البائع</h5>
+          <h5 class="col-2 text-right">لينك المتجر</h5>
+          <h5 class="col-2 text-right">المركز</h5>
+          <h5 class="col-3 text-right">مراكز رئسية</h5>
+          <h5 class="col-3 text-right">مراكز استلام و تسليم</h5>
+          <h5 class="col-2 text-right">الية الخدمة</h5>
         </div>
         <div class="prices-comparison-jarir col-12 row mt-4 border-bottom">
           <a class="my-auto col-2 text-right" href="#"> <p>فتح الموقع</p></a>
 
-          <p class="col-2 text-right prices-comparison-price my-auto">
-            <span class="green-best-price actual-best-price"
-              >افضل سعر<i class="ml-1 fas fa-check-circle"></i
-            ></span>
-            2200ر.س.
-          </p>
-
-          <div class="col-2 text-right prices-comparison-jarir-logo-container">
+          <div class="col-3 text-center prices-comparison-jarir-logo-container">
             <img
               src="./assets/jarir-logo.png"
               alt="jarir logo"
@@ -736,32 +678,22 @@
             />
           </div>
 
-          <p class="col-2 text-right prices-comparison-price my-auto">
-            <span class="green-best-price actual-best-price"
-              >افضل سعر<i class="ml-1 fas fa-check-circle"></i
-            ></span>
-            2200ر.س.
+          <p class="col-2 text-right prices-comparison-price">
+            الرياظ, جدة, القسيم, الخبر
           </p>
 
-          <div class="col-2 text-right prices-comparison-jarir-logo-container">
-            <img
-              src="./assets/jarir-logo.png"
-              alt="jarir logo"
-              class="img-fluid prices-comparison-jarir-logo"
-            />
-          </div>
+          <p class="col-3 red-color text-right prices-comparison-price">
+            لا يوجد
+          </p>
+
+          <p class="col-2 text-right prices-comparison-jarir-logo-container">
+            مواعيد
+          </p>
         </div>
         <div class="prices-comparison-jarir col-12 row mt-4 border-bottom">
           <a class="my-auto col-2 text-right" href="#"> <p>فتح الموقع</p></a>
 
-          <p class="col-2 text-right prices-comparison-price my-auto">
-            <span class="green-best-price actual-best-price"
-              >افضل سعر<i class="ml-1 fas fa-check-circle"></i
-            ></span>
-            2200ر.س.
-          </p>
-
-          <div class="col-2 text-right prices-comparison-jarir-logo-container">
+          <div class="col-3 text-center prices-comparison-jarir-logo-container">
             <img
               src="./assets/jarir-logo.png"
               alt="jarir logo"
@@ -769,32 +701,22 @@
             />
           </div>
 
-          <p class="col-2 text-right prices-comparison-price my-auto">
-            <span class="green-best-price actual-best-price"
-              >افضل سعر<i class="ml-1 fas fa-check-circle"></i
-            ></span>
-            2200ر.س.
+          <p class="col-2 text-right prices-comparison-price">
+            الرياظ, جدة, القسيم, الخبر
           </p>
 
-          <div class="col-2 text-right prices-comparison-jarir-logo-container">
-            <img
-              src="./assets/jarir-logo.png"
-              alt="jarir logo"
-              class="img-fluid prices-comparison-jarir-logo"
-            />
-          </div>
+          <p class="col-3 red-color text-right prices-comparison-price">
+            لا يوجد
+          </p>
+
+          <p class="col-2 text-right prices-comparison-jarir-logo-container">
+            مواعيد
+          </p>
         </div>
         <div class="prices-comparison-jarir col-12 row mt-4 border-bottom">
           <a class="my-auto col-2 text-right" href="#"> <p>فتح الموقع</p></a>
 
-          <p class="col-2 text-right prices-comparison-price my-auto">
-            <span class="green-best-price actual-best-price"
-              >افضل سعر<i class="ml-1 fas fa-check-circle"></i
-            ></span>
-            2200ر.س.
-          </p>
-
-          <div class="col-2 text-right prices-comparison-jarir-logo-container">
+          <div class="col-3 text-center prices-comparison-jarir-logo-container">
             <img
               src="./assets/jarir-logo.png"
               alt="jarir logo"
@@ -802,32 +724,22 @@
             />
           </div>
 
-          <p class="col-2 text-right prices-comparison-price my-auto">
-            <span class="green-best-price actual-best-price"
-              >افضل سعر<i class="ml-1 fas fa-check-circle"></i
-            ></span>
-            2200ر.س.
+          <p class="col-2 text-right prices-comparison-price">
+            الرياظ, جدة, القسيم, الخبر
           </p>
 
-          <div class="col-2 text-right prices-comparison-jarir-logo-container">
-            <img
-              src="./assets/jarir-logo.png"
-              alt="jarir logo"
-              class="img-fluid prices-comparison-jarir-logo"
-            />
-          </div>
+          <p class="col-3 text-right prices-comparison-price">
+            تبوك, الخبر, جدة, حائل
+          </p>
+
+          <p class="col-2 text-right prices-comparison-jarir-logo-container">
+            مواعيد
+          </p>
         </div>
         <div class="prices-comparison-jarir col-12 row mt-4 border-bottom">
           <a class="my-auto col-2 text-right" href="#"> <p>فتح الموقع</p></a>
 
-          <p class="col-2 text-right prices-comparison-price my-auto">
-            <span class="green-best-price actual-best-price"
-              >افضل سعر<i class="ml-1 fas fa-check-circle"></i
-            ></span>
-            2200ر.س.
-          </p>
-
-          <div class="col-2 text-right prices-comparison-jarir-logo-container">
+          <div class="col-3 text-center prices-comparison-jarir-logo-container">
             <img
               src="./assets/jarir-logo.png"
               alt="jarir logo"
@@ -835,32 +747,22 @@
             />
           </div>
 
-          <p class="col-2 text-right prices-comparison-price my-auto">
-            <span class="green-best-price actual-best-price"
-              >افضل سعر<i class="ml-1 fas fa-check-circle"></i
-            ></span>
-            2200ر.س.
+          <p class="col-2 text-right prices-comparison-price">
+            الرياظ, جدة, القسيم, الخبر
           </p>
 
-          <div class="col-2 text-right prices-comparison-jarir-logo-container">
-            <img
-              src="./assets/jarir-logo.png"
-              alt="jarir logo"
-              class="img-fluid prices-comparison-jarir-logo"
-            />
-          </div>
+          <p class="col-3 red-color text-right prices-comparison-price">
+            لا يوجد
+          </p>
+
+          <p class="col-2 text-right prices-comparison-jarir-logo-container">
+            مواعيد
+          </p>
         </div>
         <div class="prices-comparison-jarir col-12 row mt-4 border-bottom">
           <a class="my-auto col-2 text-right" href="#"> <p>فتح الموقع</p></a>
 
-          <p class="col-2 text-right prices-comparison-price my-auto">
-            <span class="green-best-price actual-best-price"
-              >افضل سعر<i class="ml-1 fas fa-check-circle"></i
-            ></span>
-            2200ر.س.
-          </p>
-
-          <div class="col-2 text-right prices-comparison-jarir-logo-container">
+          <div class="col-3 text-center prices-comparison-jarir-logo-container">
             <img
               src="./assets/jarir-logo.png"
               alt="jarir logo"
@@ -868,71 +770,84 @@
             />
           </div>
 
-          <p class="col-2 text-right prices-comparison-price my-auto">
-            <span class="green-best-price actual-best-price"
-              >افضل سعر<i class="ml-1 fas fa-check-circle"></i
-            ></span>
-            2200ر.س.
+          <p class="col-2 text-right prices-comparison-price">
+            الرياظ, جدة, القسيم, الخبر
           </p>
 
-          <div class="col-2 text-right prices-comparison-jarir-logo-container">
-            <img
-              src="./assets/jarir-logo.png"
-              alt="jarir logo"
-              class="img-fluid prices-comparison-jarir-logo"
-            />
-          </div>
+          <p class="col-3 red-color text-right prices-comparison-price">
+            لا يوجد
+          </p>
+
+          <p class="col-2 text-right prices-comparison-jarir-logo-container">
+            مواعيد
+          </p>
         </div>
       </section>
 
-      <section class="section-border row" id="Related-articles-section">
+      <section
+        class="section-border vertical-scroll row"
+        id="Related-articles-section"
+      >
         <div class="col-4 mt-4 d-block mx-auto section-divider"></div>
         <div class="col-12 devices-title-and-info mb-5">
           <h4 class="title-center mt-5 text-right">
-            <i class="fas fa-mobile-alt"></i> مقالات تخص المنتج </h4>
+            <i class="fas fa-mobile-alt"></i> مقالات تخص المنتج
+          </h4>
         </div>
-        
+
         <div class="single-article-container row col-12">
-          <h4 class="col-11 mt-3 mb-4 text-right related-articles-article">أخطر 10 معلومات عن آيفون 12 الجديد</h4><h4 class="related-articles-article col-1 my-3 text-right">.1</h4>
-        </div>
-        <div class="single-article-container row col-12">
-          <h4 class="col-11 mt-3 mb-4 text-right related-articles-article">آيفون 12 يخطف الملايين.. ماذا فعلت أبل في هاتفها الجديد؟</h4><h4 class="related-articles-article col-1 my-3 text-right">.2</h4>
-        </div>
-        <div class="single-article-container row col-12">
-          <h4 class="col-11 mt-3 mb-4 text-right related-articles-article">ميزة مهمة تدفع الملايين حول العالم لشراء آيفون 12 برو</h4><h4 class="related-articles-article col-1 my-3 text-right">.3</h4>
+          <h4 class="col-10 mt-3 mb-4 text-right related-articles-article">
+            أخطر 10 معلومات عن آيفون 12 الجديد
+          </h4>
+          <h4 class="related-articles-article col-1 my-3 text-right">.1</h4>
         </div>
         <div class="single-article-container row col-12">
-          <h4 class="col-11 mt-3 mb-4 text-right related-articles-article">أخطر 10 معلومات عن آيفون 12 الجديد</h4><h4 class="related-articles-article col-1 my-3 text-right">.4</h4>
+          <h4 class="col-10 mt-3 mb-4 text-right related-articles-article">
+            آيفون 12 يخطف الملايين.. ماذا فعلت أبل في هاتفها الجديد؟
+          </h4>
+          <h4 class="related-articles-article col-1 my-3 text-right">.2</h4>
         </div>
         <div class="single-article-container row col-12">
-          <h4 class="col-11 mt-3 mb-4 text-right related-articles-article">آيفون 12 يخطف الملايين.. ماذا فعلت أبل في هاتفها الجديد؟</h4><h4 class="related-articles-article col-1 my-3 text-right">.5</h4>
+          <h4 class="col-10 mt-3 mb-4 text-right related-articles-article">
+            ميزة مهمة تدفع الملايين حول العالم لشراء آيفون 12 برو
+          </h4>
+          <h4 class="related-articles-article col-1 my-3 text-right">.3</h4>
         </div>
         <div class="single-article-container row col-12">
-          <h4 class="col-11 mt-3 mb-4 text-right related-articles-article">ميزة مهمة تدفع الملايين حول العالم لشراء آيفون 12 برو</h4> <h4 class="related-articles-article col-1 my-3 text-right">.6</h4>
+          <h4 class="col-10 mt-3 mb-4 text-right related-articles-article">
+            أخطر 10 معلومات عن آيفون 12 الجديد
+          </h4>
+          <h4 class="related-articles-article col-1 my-3 text-right">.4</h4>
         </div>
-        
-        
-        
-        
-        
-        
+        <div class="single-article-container row col-12">
+          <h4 class="col-10 mt-3 mb-4 text-right related-articles-article">
+            آيفون 12 يخطف الملايين.. ماذا فعلت أبل في هاتفها الجديد؟
+          </h4>
+          <h4 class="related-articles-article col-1 my-3 text-right">.5</h4>
+        </div>
+        <div class="single-article-container row col-12">
+          <h4 class="col-10 mt-3 mb-4 text-right related-articles-article">
+            ميزة مهمة تدفع الملايين حول العالم لشراء آيفون 12 برو
+          </h4>
+          <h4 class="related-articles-article col-1 my-3 text-right">.6</h4>
+        </div>
       </section>
     </main>
 
-    <footer class="row">
+    <footer class="row pt-3">
       <div class="footer-contactUs-container col-2">
         <h4 class="footer-contactUs-title">التواصل</h4>
         <p class="footer-contactUs-item">@atesta</p>
         <p class="footer-contactUs-item">+9182312342</p>
       </div>
 
-      <div class="footer-aboutUs-container col-3">
+      <div class="footer-aboutUs-container col-5 col-sm-4 col-md-3">
         <h4 class="footer-aboutUs-title">من نحن؟</h4>
         <p class="footer-aboutUs-item">عن مضمون</p>
         <p class="footer-aboutUs-item">المدونة</p>
       </div>
 
-      <div class="company-brand-name-footer col-5 my-auto text-right">
+      <div class="company-brand-name-footer col-5 col-md-5 my-auto text-right">
         مضمون
       </div>
     </footer>

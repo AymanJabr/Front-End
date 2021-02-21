@@ -3,20 +3,22 @@ const sections = document.querySelectorAll("section");
 
 const options = {
     root: null,
-    threshold: 0.15,
+    threshold: 0.1,
     rootMargin: ""
 };
 
-const observer = new IntersectionObserver(function(entries, observer ){
-entries.forEach(entry =>{
-    // console.log(entry)
-    entry.target.classList.toggle('vertical-scroll')
-})
+const observer = new IntersectionObserver(function (entries, observer) {
+    entries.forEach(entry => {
+        // console.log(entry)
+        entry.target.classList.toggle('vertical-scroll')
+    })
 }, options)
 
-sections.forEach( section => {
+sections.forEach(section => {
     observer.observe(section)
 })
+
+
 
 //Changing the chart using Chart.js
 let myChart = document.getElementById("myChart").getContext("2d");
@@ -213,3 +215,24 @@ let massPopChart = new Chart(myChart, {
         },
     },
 });
+
+
+
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown nav content */
+function toggleNavMenu() {
+        document.getElementById("nav-hidden-menu").classList.toggle("ninja")
+     
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function (event) {
+    if (!event.target.matches('.nav-hidden-menu-button')) {
+        var dropdown = document.getElementById("nav-hidden-menu");
+
+        if (!dropdown.classList.contains('ninja')) {
+            dropdown.classList.add('ninja');
+        }
+
+    }
+}
